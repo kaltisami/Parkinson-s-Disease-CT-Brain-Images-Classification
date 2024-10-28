@@ -6,14 +6,13 @@ This repository contains a Jupyter Notebook for the classification of brain imag
 Table of Contents
 -----------------
 
--   [Introduction]
--   [Data Preprocessing]
--   [Model Training]
--   [Evaluation Metrics]
--   [Visualization]
--   [Getting Started]
--   [Contributing]
--   [License]
+-   Introduction
+-   Data Preprocessing
+-   Model Training
+-   Evaluation Metrics
+-   Visualization
+-   Getting Started
+-   Contributing
 
 Introduction
 ------------
