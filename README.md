@@ -61,7 +61,7 @@ To get started with this project, follow these steps:
 
 1.  Clone the Repository
 
-`git clone https://github.com/yourusername/Parkinsons_Disease_CT_Brain_Images_Classification.git`
+`git clone https://github.com/kaltisami/Parkinsons_Disease_CT_Brain_Images_Classification.git`
 
 2.  Install Dependencies Make sure you have the required libraries installed
 
