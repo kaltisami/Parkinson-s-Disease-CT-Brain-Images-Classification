@@ -34,7 +34,6 @@ Model Training
 We implement various machine learning algorithms, including:
 
 -   Convolutional Neural Networks (CNNs)
--   Support Vector Machines (SVMs)
 
 The notebook provides code snippets for training these models on the preprocessed data.
 
@@ -64,11 +63,10 @@ To get started with this project, follow these steps:
 
 `git clone https://github.com/yourusername/Parkinsons_Disease_CT_Brain_Images_Classification.git`
 
-1.  Install Dependencies Make sure you have the required libraries installed:
+2.  Install Dependencies Make sure you have the required libraries installed
 
-`pip install -r requirements.txt`
 
-1.  Run the Notebook Open the notebook file [Parkinsons_Disease_CT_Brain_Images_Classification.ipynb] in Jupyter Notebook to explore the code and results.
+3.  Run the Notebook Open the notebook file [Parkinsons_Disease_CT_Brain_Images_Classification.ipynb] in Jupyter Notebook to explore the code and results.
 
 Contributing
 ------------
