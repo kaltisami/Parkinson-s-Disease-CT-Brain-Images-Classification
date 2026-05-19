@@ -1,81 +1,61 @@
-Parkinson's Disease CT Brain Images Classification
-==================================================
+# Parkinson's Disease CT Brain Images Classification
 
-This repository contains a Jupyter Notebook for the classification of brain images from CT scans of patients with Parkinson's disease. The aim is to leverage machine learning techniques to assist in the diagnosis and monitoring of this condition.
+Binary classification of CT brain images to detect Parkinson's disease using transfer learning. Three pretrained CNN architectures are benchmarked and compared.
 
-Table of Contents
------------------
+## Task
 
--   Introduction
--   Data Preprocessing
--   Model Training
--   Evaluation Metrics
--   Visualization
--   Getting Started
--   Contributing
+Given a CT brain scan, predict whether the patient has Parkinson's disease (binary: 0 = Non-Parkinson's, 1 = Parkinson's).
 
-Introduction
-------------
+## Models Benchmarked
 
-Parkinson's disease is a progressive neurological disorder that affects movement. Early diagnosis is crucial for effective management. This project focuses on analyzing CT brain images to identify patterns indicative of Parkinson's disease.
+| Model | Backbone | Epochs | Best Val Accuracy |
+|-------|----------|--------|-------------------|
+| VGG16 | ImageNet pretrained | 15 | ~86.5% |
+| InceptionV3 | ImageNet pretrained | 20 | ~90.6% |
+| **DenseNet121** | **ImageNet pretrained** | **15** | **~96.5%** |
 
-Data Preprocessing
-------------------
+**DenseNet121 is the best performer**, achieving 96.5% validation accuracy by epoch 2 — consistent with its strong performance on medical imaging tasks.
 
-In this section, we will cover the steps taken to clean and prepare the CT images for analysis, including:
+## Methodology
 
--   Image resizing
--   Normalization
--   Data augmentation techniques
+- **Preprocessing**: Image resizing to 224×224, normalization (0–1), class distribution analysis
+- **Architecture**: Pretrained backbone (frozen) + custom classification head (Dense → Sigmoid)
+- **Training**: 80/20 train/validation split, batch size 32, binary cross-entropy loss, Adam optimizer
+- **Evaluation**: Accuracy, Precision, Recall, F1-Score on held-out test set
+- **Visualization**: Confusion matrices, training curves, class distribution plots, pixel intensity analysis
 
-Model Training
---------------
+## Stack
 
-We implement various machine learning algorithms, including:
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
+![Keras](https://img.shields.io/badge/Keras-D00000?style=flat&logo=keras&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)
 
--   Convolutional Neural Networks (CNNs)
+`tensorflow` · `keras` · `scikit-learn` · `numpy` · `opencv` · `matplotlib` · `seaborn`
 
-The notebook provides code snippets for training these models on the preprocessed data.
+## Project Structure
 
-Evaluation Metrics
-------------------
+```
+Parkinson-s-Disease-CT-Brain-Images-Classification/
+├── Parkinson's_Disease_CT_Brain_Images_Classification.ipynb   # Full pipeline
+└── README.md
+```
 
-Model performance is assessed using:
+## Getting Started
 
--   Accuracy
--   Precision
--   Recall
--   F1-score
+```bash
+git clone https://github.com/kaltisami/Parkinson-s-Disease-CT-Brain-Images-Classification.git
+cd Parkinson-s-Disease-CT-Brain-Images-Classification
+pip install tensorflow scikit-learn numpy opencv-python matplotlib seaborn
+```
 
-Graphs and tables are included to illustrate model performance.
+Open the notebook in Jupyter or Google Colab and run all cells. Place the CT brain image dataset in the project directory before running.
 
-Visualization
--------------
+## Related Projects
 
-Tools for visualizing predictions and performance metrics are provided, enabling a clearer understanding of model effectiveness.
+- [chest-xray-ai-diagnosis](https://github.com/kaltisami/chest-xray-ai-diagnosis) — production-grade chest X-ray analysis with FastAPI, GradCAM, and anatomical segmentation
+- [Stroke-Prediction-Binary-Classification](https://github.com/kaltisami/Stroke-Prediction-Binary-Classification) — stroke risk prediction from patient health data
 
-Getting Started
----------------
+## License
 
-To get started with this project, follow these steps:
-
-1.  Clone the Repository
-
-`git clone https://github.com/kaltisami/Parkinsons_Disease_CT_Brain_Images_Classification.git`
-
-2.  Install Dependencies Make sure you have the required libraries installed
-
-
-3.  Run the Notebook Open the notebook file [Parkinsons_Disease_CT_Brain_Images_Classification.ipynb] in Jupyter Notebook to explore the code and results.
-
-Contributing
-------------
-
-Contributions are welcome! Feel free to submit a pull request or open an issue for any enhancements or bug fixes.
-
-License
--------
-
-This project is licensed under the MIT License.
-
-For any questions or suggestions, please contact [<kaltisami@gmail.com>].
+MIT
