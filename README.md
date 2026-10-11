@@ -53,7 +53,7 @@ Open the notebook in Jupyter or Google Colab and run all cells. Place the CT bra
 
 ## Related Projects
 
-- [chest-xray-ai-diagnosis](https://github.com/kaltisami/chest-xray-ai-diagnosis) — production-grade chest X-ray analysis with FastAPI, GradCAM, and anatomical segmentation
+- [chest-xray-ai-diagnosis](https://github.com/kaltisami/chest-xray-ai-diagnosis) — inference-only chest X-ray analysis system (FastAPI, Grad-CAM, anatomical segmentation)
 - [Stroke-Prediction-Binary-Classification](https://github.com/kaltisami/Stroke-Prediction-Binary-Classification) — stroke risk prediction from patient health data
 
 ## License
